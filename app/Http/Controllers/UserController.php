@@ -83,6 +83,7 @@ class UserController extends Controller
         $user = $this->userRepository->create([
             'name'     => $request->input('name'),
             'email'    => $request->input('email'),
+			'nickname' => $request->input('nickname'),
             'password' => Hash::make($request->input('password')),
         ]);
 
@@ -128,6 +129,7 @@ class UserController extends Controller
         $data = [
             'name'     => trim($request->input('name')),
             'email'    => trim($request->input('email')),
+			'nickname' => trim($request->input('nickname')),
             'password' => Hash::make(trim($request->input('password')) ?: null),
         ];
 
