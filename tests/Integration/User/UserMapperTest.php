@@ -25,6 +25,7 @@ class UserMapperTest extends FrameworkTest
             'name'     => 'Anakin Skywalker',
             'email'    => 'Vader@Empire.com',
             'password' => Hash::make('IHateSand123'),
+			'nickname' => 'anewnickname',
         ]);
         $result = $this->userMapper->single($user);
         $this->assertEquals(
@@ -32,6 +33,7 @@ class UserMapperTest extends FrameworkTest
                 'id'    => $user->id,
                 'name'  => $user->name,
                 'email' => $user->email,
+				'nickname' => $user->nickname,
             ],
             $result
         );
